@@ -1,21 +1,56 @@
-# MIMIC-AKI-Classifier
+# MIMIC-IV AKI Classifier
+
+![GitHub repo size](https://img.shields.io/github/repo-size/MakiuhCN/MIMIC-IV-AKI-Classifier)  
+![GitHub last commit](https://img.shields.io/github/last-commit/MakiuhCN/MIMIC-IV-AKI-Classifier)
 
 ## Overview
-This repository contains a machine learning project designed to classify the most severe Acute Kidney Injury (AKI) stage a patient reaches during their ICU stay, using first-day ICU patient data from the MIMIC-IV dataset. The project implements a comprehensive pipeline including data preprocessing, feature selection, and model evaluation, with a focus on ensemble methods such as XGBoost and LightGBM. After Bayesian Optimization for hyperparameter tuning, XGBoost was selected as the final model, achieving a macro-average AUC-ROC of 0.7025 and a test set accuracy of 0.48. This work aims to support early AKI detection in critical care settings, contributing to improved clinical decision-making and patient outcomes.
 
-## Features
-- **Dataset**: Utilizes first-day ICU data from MIMIC-IV, filtered for patients aged 18–89.
-- **Target Variable**: Classifies AKI stages into four categories (0 = No AKI, 1 = Stage 1, 2 = Stage 2, 3 = Stage 3).
+This repository contains the code and documentation for a predictive modeling project aimed at classifying the most severe **Acute Kidney Injury (AKI)** stage a patient reaches during their ICU stay using first-day ICU data from the **MIMIC-IV** dataset. The project was developed as part of the *Advanced Statistical Learning - Assignment 1* at the National University of Singapore (Mar 2025).
 
-![data-flow](https://github.com/user-attachments/assets/175648fe-8e65-41dd-b448-8f68524217ed)
+The goal is to predict AKI stages (0 = No AKI, 1-3 = Increasing severity levels) by leveraging machine learning techniques, with a focus on early detection to improve clinical decision-making and patient outcomes in critical care settings. The final model, a tuned **XGBoost classifier**, achieves a test set accuracy of **0.48** and an AUC-ROC of **0.7025**.
 
-![importance_all](https://github.com/user-attachments/assets/b769f9b5-66f2-4822-8a49-5a83ab9e5b02)
+For more details, refer to the accompanying paper: *Predictive Modeling for Classifying Acute Kidney Injury Stages Using First-Day ICU Data*.
 
+## Repository Contents
 
-- **Methodology**: Includes Random Forest for feature selection, five ML models (Random Forest, XGBoost, LightGBM, Logistic Regression, AdaBoost), and Bayesian Optimization for tuning.
+- **`mimiciv_data_dictionary.md`**: A detailed data dictionary describing the features in the MIMIC-IV dataset used for this project, including identifiers, outcomes, demographics, vital signs, blood gas parameters, laboratory results, and more.
+- **`MIMIC-IV-AKI-Classifier.ipynb`**: The Jupyter Notebook containing the full pipeline for data preprocessing, feature selection, model development, and evaluation. It includes implementations of Random Forest, XGBoost, LightGBM, Logistic Regression, and AdaBoost, with Bayesian Optimization for hyperparameter tuning.
 
-![ROC_Comparison](https://github.com/user-attachments/assets/75e22517-5d88-45ab-9a18-ac3aab3e8a1f)
+## Prerequisites
 
-- **Results**: XGBoost outperforms with an optimized AUC of 0.7025, validated on a 20% test set.
+To run the code in this repository, ensure you have the following installed:
 
-![coverage](https://github.com/user-attachments/assets/5e7370ea-67f2-4530-9b42-c35ae7580bca)
+- Python 3.8+
+
+- Required libraries:
+
+  ```bash
+  pip install pandas numpy matplotlib seaborn scikit-learn xgboost lightgbm statsmodels bayesian-optimization
+  ```
+
+- Access to the MIMIC-IV dataset (available via [PhysioNet](https://physionet.org/content/mimiciv/2.2/)). You need to place the dataset file (`sph6004_assignment1_data.csv`) in the working directory.
+
+## Usage
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/MakiuhCN/MIMIC-IV-AKI-Classifier.git
+   cd MIMIC-IV-AKI-Classifier
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Notebook**:
+
+   - Open `MIMIC-IV-AKI-Classifier.ipynb` in Jupyter Notebook or JupyterLab.
+   - Ensure the MIMIC-IV dataset (`sph6004_assignment1_data.csv`) is in the same directory.
+   - Execute the cells sequentially to preprocess data, train models, and evaluate results.
+
+## Data
+
+The dataset used is from [MIMIC-IV](https://physionet.org/content/mimiciv/2.2/#files), containing first-day ICU patient records with features like vital signs, lab results, and demographics. The target variable is `aki_stage` (0-3). See `mimiciv_data_dictionary.md` for a complete description.
