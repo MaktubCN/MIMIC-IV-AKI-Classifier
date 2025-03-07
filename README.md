@@ -1,7 +1,7 @@
 # MIMIC-IV AKI Classifier
 
-![GitHub repo size](https://img.shields.io/github/repo-size/MakiuhCN/MIMIC-IV-AKI-Classifier)  
-![GitHub last commit](https://img.shields.io/github/last-commit/MakiuhCN/MIMIC-IV-AKI-Classifier)
+![GitHub repo size](https://img.shields.io/github/repo-size/MaktubCN/MIMIC-IV-AKI-Classifier)  
+![GitHub last commit](https://img.shields.io/github/last-commit/MaktubCN/MIMIC-IV-AKI-Classifier)
 
 ## Overview
 
