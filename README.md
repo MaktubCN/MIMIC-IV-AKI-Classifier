@@ -5,7 +5,7 @@
 
 ## Overview
 
-This repository contains the code and documentation for a predictive modeling project aimed at classifying the most severe **Acute Kidney Injury (AKI)** stage a patient reaches during their ICU stay using first-day ICU data from the **MIMIC-IV** dataset. The project was developed as part of the *Advanced Statistical Learning - Assignment 1* at the National University of Singapore (Mar 2025).
+This repository contains the code and documentation for a predictive modeling project aimed at classifying the most severe **Acute Kidney Injury (AKI)** stage a patient reaches during their ICU stay using first-day ICU data from the **MIMIC-IV** dataset. The project was developed as part of the *Advanced Statistical Learning - Assignment 1* (Mar 2025).
 
 The goal is to predict AKI stages (0 = No AKI, 1-3 = Increasing severity levels) by leveraging machine learning techniques, with a focus on early detection to improve clinical decision-making and patient outcomes in critical care settings. The final model, a tuned **XGBoost classifier**, achieves a test set accuracy of **0.48** and an AUC-ROC of **0.7025**.
 
